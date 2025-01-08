@@ -1,0 +1,5 @@
+export * from './Cabecalho'
+export * from './Conteudo'
+export * from './Quadrado'
+export * from './Rodape'
+export * from './Tabela'

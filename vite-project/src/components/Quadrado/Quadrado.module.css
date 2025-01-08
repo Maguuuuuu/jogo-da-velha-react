@@ -1,0 +1,18 @@
+.Quadrado{
+    width: 70px;
+    height: 70px;
+    background-color: var(--cinza);
+    border: none;
+    justify-content: space-between;
+    outline: none;
+    border: var(--rosa) 10px; 
+    padding: 10px; 
+    box-shadow: none; 
+    display: inline-block;
+    box-sizing: border-box;
+    text-rendering: none;
+    transform: none; 
+    
+}
+
+

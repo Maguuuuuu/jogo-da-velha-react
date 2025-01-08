@@ -1,0 +1,15 @@
+.Tabela{
+    background-color: var(--rosa);
+    color: black;
+    height: 400px;
+    width: 500px;
+    padding: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Tabela h2{
+    margin-bottom: 10px;
+    color: var(--preto);
+}
+
