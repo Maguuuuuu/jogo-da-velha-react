@@ -13,3 +13,7 @@
     color: var(--preto);
 }
 
+.Tabela div{
+    overflow: hidden;
+    position: static;
+}

@@ -1,0 +1,17 @@
+.BotaoRecomecar{
+    width: 85px;
+    height: 40px;
+    background-color: var(--verde);
+    border: none;
+    outline: none; 
+    box-shadow: none; 
+    display: inline-block;
+    box-sizing: border-box;
+    text-rendering: none;
+    transform: none; 
+    margin: 5px;
+    position: static;
+    margin-top: 10px;
+    padding: 5px;
+
+}

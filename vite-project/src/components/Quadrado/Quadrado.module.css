@@ -12,7 +12,11 @@
     box-sizing: border-box;
     text-rendering: none;
     transform: none; 
-    
+    margin: 5px;
+    position: static;
+}
+.Quadrado:active {
+    transform: none; 
 }
 
 

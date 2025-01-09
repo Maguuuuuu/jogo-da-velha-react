@@ -1,3 +1,4 @@
+export * from './BotaoRecomecar'
 export * from './Cabecalho'
 export * from './Conteudo'
 export * from './Quadrado'

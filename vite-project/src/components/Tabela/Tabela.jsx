@@ -3,28 +3,31 @@ import { Quadrado } from "../Quadrado";
 import { useAppContext } from "../../hooks";
 import { MensagemVencedor } from "../MensagemVencedor";
 import style from './Tabela.module.css'
+import { BotaoRecomecar } from "../BotaoRecomecar";
 
 
 const Tabela = () => {
 
-    const { valorX, setValorX, quadrados, setQuadrados, calcularVencedor, verificarVelha} = useAppContext();
+    const { valorX, setValorX, quadrados, setQuadrados, calcularVencedor, verificarVelha, handleClick, recomecar} = useAppContext();
 
-    const handleClick = (i) => {
+    // const handleClick = (i) => {
 
-        if (quadrados[i] || calcularVencedor(quadrados)) {
-            return;
-        }
+    //     if (quadrados[i] || calcularVencedor(quadrados)) {
+    //         return;
+    //     }
 
-        const jogada = quadrados.slice()
-        if(valorX){
-            jogada[i]='X';
-        } else {
-            jogada[i]='O';
-        };
+    //     const jogada = quadrados.slice()
+    //     if(valorX){
+    //         jogada[i]='X';
+    //     } else {
+    //         jogada[i]='O';
+    //     };
 
-        setQuadrados(jogada)
-        setValorX(!valorX)
-    };
+    //     setQuadrados(jogada)
+    //     setValorX(!valorX)
+    // };
+
+    
 
     const vencedor = calcularVencedor(quadrados)
     const deuVelha = verificarVelha(quadrados)
@@ -59,6 +62,8 @@ const Tabela = () => {
             <MensagemVencedor jogadorDaVez={ vencedor==="X" ? 'X' : 'O'} /> 
         )}
         {deuVelha && <h2>Deu velha!</h2>}
+
+        {(vencedor || deuVelha) && (<BotaoRecomecar/>)}
 
         </div>
         </>

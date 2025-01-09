@@ -1,14 +1,14 @@
 import { createContext, useState } from "react";
 
 
+
 export const AppContext = createContext({});
 
 export const  AppContextProvider = (props) => {
     const { children } = props;
 
     const [quadrados, setQuadrados] = useState(Array(9).fill(null))
-    const [valorX, setValorX] = useState(true)
-
+    const [valorX, setValorX] = useState(true)    
 
     const calcularVencedor = (quadrados) => {
         const combinacoes = [
@@ -37,8 +37,30 @@ export const  AppContextProvider = (props) => {
             return true
         }
           };
-          
+
+      const handleClick = (i) => {
+
+        if (quadrados[i] || calcularVencedor(quadrados)) {
+            return;
+        }
+
+        const jogada = quadrados.slice()
+        if(valorX){
+            jogada[i]='X';
+        } else {
+            jogada[i]='O';
+        };
+
+        setQuadrados(jogada)
+        setValorX(!valorX)
+    };
       
+          
+
+      const recomecar = () => {
+        setQuadrados('')
+
+      }
 
 
     return (
@@ -49,7 +71,9 @@ export const  AppContextProvider = (props) => {
             valorX,
             setValorX,
             verificarVelha,
-        }}>
+            recomecar,
+            handleClick,
+            }}>
             {children}
         </AppContext.Provider>
     )
