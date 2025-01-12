@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-
+import { Tabela } from "../components";
 
 export const AppContext = createContext({});
 
@@ -8,7 +8,10 @@ export const  AppContextProvider = (props) => {
     const { children } = props;
 
     const [quadrados, setQuadrados] = useState(Array(9).fill(null))
-    const [valorX, setValorX] = useState(true)    
+    const [valorX, setValorX] = useState(true)   
+    
+
+    // const [tabuleiro, setTabuleiro] = useState(true)
 
     const calcularVencedor = (quadrados) => {
         const combinacoes = [
@@ -53,13 +56,14 @@ export const  AppContextProvider = (props) => {
 
         setQuadrados(jogada)
         setValorX(!valorX)
-    };
+
+      };
       
           
 
       const recomecar = () => {
-        setQuadrados('')
-
+        setQuadrados(Array(9).fill(null)); 
+        setValorX(true);
       }
 
 

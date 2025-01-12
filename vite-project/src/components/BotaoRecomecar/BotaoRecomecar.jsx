@@ -1,21 +1,15 @@
 import style from './BotaoRecomecar.module.css'
+
 import { useAppContext } from "../../hooks";
-import { useNavigate } from "react-router-dom";
 
+const BotaoRecomecar = ({jogadorDaVez}) => {
 
-
-const BotaoRecomecar = ({onClickRecomecar}) => {
-    
-    const navigate = useNavigate();
-      
-        const reloadPage = () => {
-          navigate(0); // Recarrega a página
-        };
+    const {recomecar} = useAppContext();
 
     return (
         <button 
         className={style.BotaoRecomecar}
-        onClick={reloadPage}
+        onClick={recomecar}
         >
             Recomeçar
         </button>
